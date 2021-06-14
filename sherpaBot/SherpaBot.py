@@ -47,6 +47,8 @@ class SherpaBot:
         if ctx.message.channel.id == self.channels.profile_picture[ctx.message.guild.id].id and isinstance(error, commands.CommandNotFound):
             await ctx.reply(Constants.ERROR_ON_SHERPAPIC)
             return
+        if ctx.message.channel == "!rank":
+            return
         raise error
 
     async def suggest(self, ctx):
